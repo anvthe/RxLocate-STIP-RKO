@@ -26,7 +26,7 @@ export class MapViewComponent implements OnChanges {
 
   configMap() {
     this.map = L.map('map', {
-      center: [this.fullData?.locationLat, this.fullData?.locationLng],
+      center: [this.fullData?.location.latitude, this.fullData?.location.longitude],
       zoom: 16,
     });
 
@@ -38,7 +38,7 @@ export class MapViewComponent implements OnChanges {
       },
     ).addTo(this.map);
 
-    L.marker([this.fullData?.locationLat, this.fullData?.locationLng])
+    L.marker([this.fullData?.location.latitude, this.fullData?.location.longitude])
       .addTo(this.map)
       .bindPopup(
         '<div class="card w-48 h-52 bg-base-100 shadow-xl">\n' +
@@ -52,7 +52,7 @@ export class MapViewComponent implements OnChanges {
       )
       .openPopup();
 
-    L.circle([this.fullData?.locationLat, this.fullData?.locationLng], {
+    L.circle([this.fullData?.location.latitude, this.fullData?.location.longitude], {
       color: '#b2d9ed',
       fillColor: '#b2d9ed',
       fillOpacity: 0.5,

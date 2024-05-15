@@ -30,7 +30,7 @@ export class LoginContainerComponent implements onInit {
 
   onSubmit(formData: { username: string; password: string }): void {
     const data = {
-      username: formData.username,
+      email: formData.username,
       password: formData.password,
     };
 
